@@ -299,6 +299,7 @@ namespace O2Micro.Cobra.KALL08
                     {
                         pval = ElementDefine.PARAM_HEX_ERROR;
                         ret = LibErrorCode.IDS_ERR_BUS_DATA_PEC_ERROR;
+                        //continue;
                     }
                     else
                     {

@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Root usage="ExtensionDescriptor" chip="KALL08" chiptype="7708" bustype ="I2C" libname ="O2Micro.Cobra.KALL08" AppVersion="2.00.03" OCEVersion="1.00.05.00" ProjectCode="OCEKLL8M" AMTEnable="false" >
+<Root usage="ExtensionDescriptor" chip="KALL08" chiptype="7708" bustype ="I2C" libname ="O2Micro.Cobra.KALL08" AppVersion="2.00.03" OCEVersion="1.00.06.00" ProjectCode="OCEKLL8M" AMTEnable="false" >
   <Part Name="DBConfig">
     <ChipName>KALL08|OZ7708</ChipName>
     <ChipVersion>A0</ChipVersion>
     <UserType>M</UserType>
-    <Date>20181214</Date>
+    <Date>20190322</Date>
     <HasCom>true</HasCom>
     <HasAMT>true</HasAMT>
   </Part>
   <Part Name = "MainBtnList">
-    <Button Label = "Mass Production"    DBModuleName="Production"        Name = "Production" ShowVerify="False" ShowConfig="False" ShowHEX="False" PanelName ="O2Micro.Cobra.ProductionPanel" External="EfuseConfig|BoardConfig|MPTConfig">
+    <Button Label = "Mass Production"    DBModuleName="Production"        Name = "Production" ShowVerify="False" ShowConfig="False" ShowHEX="False" PanelName ="O2Micro.Cobra.ProductionPanel" External="EFUSE Config|Board Config">
       <Password>111111</Password>
     </Button>
   </Part>
