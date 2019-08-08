@@ -3714,7 +3714,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>b</Order>
-          <NickName>V33_ON</NickName>
+          <NickName>V33-ON</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -4530,7 +4530,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>5</Order>
-          <NickName>SCAN_RATE</NickName>
+          <NickName>SCAN-RATE</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -4565,7 +4565,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>6</Order>
-          <NickName>UVP_DFLT</NickName>
+          <NickName>UVP-DFLT</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -4583,7 +4583,7 @@
       <RegRef>1</RegRef>
       <Offset>1260</Offset>
       <SubType>117</SubType>
-      <HexMin>0</HexMin>
+      <HexMin>1</HexMin>
       <HexMax>3f</HexMax>
       <PhyMin>-29.1</PhyMin>
       <PhyMax>13.4</PhyMax>
@@ -4597,14 +4597,14 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>0</Order>
-          <NickName>CUT_T</NickName>
+          <NickName>CUT-T</NickName>
           <Catalog>CUT</Catalog>
-          <DefValue>12.89</DefValue>
+          <DefValue>0</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
-          <MinValue>-29.1</MinValue>
-          <MaxValue>12.9</MaxValue>
+          <MinValue>-9999</MinValue>
+          <MaxValue>-9999</MaxValue>
           <Relations>
             <Item>0x00026c06</Item>
             <Item>0x000c0002</Item>
@@ -4633,9 +4633,9 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>1</Order>
-          <NickName>CUT_H</NickName>
+          <NickName>CUT-H</NickName>
           <Catalog>CUT</Catalog>
-          <DefValue>1.4</DefValue>
+          <DefValue>5</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
@@ -4651,7 +4651,7 @@
       <RegRef>1</RegRef>
       <Offset>1455</Offset>
       <SubType>117</SubType>
-      <HexMin>0</HexMin>
+      <HexMin>1</HexMin>
       <HexMax>3f</HexMax>
       <PhyMin>-35.9</PhyMin>
       <PhyMax>4.2</PhyMax>
@@ -4665,14 +4665,14 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>0</Order>
-          <NickName>DUT_T</NickName>
+          <NickName>DUT-T</NickName>
           <Catalog>DUT</Catalog>
-          <DefValue>3.74</DefValue>
+          <DefValue>-20</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
-          <MinValue>-35.9</MinValue>
-          <MaxValue>3.75</MaxValue>
+          <MinValue>-9999</MinValue>
+          <MaxValue>-9999</MaxValue>
           <Relations>
             <Item>0x00026f04</Item>
             <Item>0x000c0003</Item>
@@ -4701,14 +4701,14 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>0</Order>
-          <NickName>COT_T</NickName>
+          <NickName>COT-T</NickName>
           <Catalog>COT</Catalog>
-          <DefValue>92.6</DefValue>
+          <DefValue>55</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
-          <MinValue>34.9</MinValue>
-          <MaxValue>92.7</MaxValue>
+          <MinValue>-9999</MinValue>
+          <MaxValue>-9999</MaxValue>
           <Relations>
             <Item>0x00026d08</Item>
           </Relations>
@@ -4739,7 +4739,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>7</Order>
-          <NickName>DFET_OFF_IN_CHG</NickName>
+          <NickName>DFET-OFF-IN-CHG</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -4771,9 +4771,9 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>1</Order>
-          <NickName>COT_H</NickName>
+          <NickName>COT-H</NickName>
           <Catalog>COT</Catalog>
-          <DefValue>4.34</DefValue>
+          <DefValue>10</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
@@ -4808,7 +4808,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>0</Order>
-          <NickName>BAL_A_O</NickName>
+          <NickName>BAL-A-O</NickName>
           <Catalog>BAL</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -4843,7 +4843,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>8</Order>
-          <NickName>EXT_RL_O</NickName>
+          <NickName>EXT-RL-O</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -4875,14 +4875,14 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>0</Order>
-          <NickName>DOT_T</NickName>
+          <NickName>DOT-T</NickName>
           <Catalog>DOT</Catalog>
-          <DefValue>91.5</DefValue>
+          <DefValue>70</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
-          <MinValue>53.5</MinValue>
-          <MaxValue>91.5</MaxValue>
+          <MinValue>-9999</MinValue>
+          <MaxValue>-9999</MaxValue>
           <Relations>
             <Item>0x00026e08</Item>
           </Relations>
@@ -4913,7 +4913,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>9</Order>
-          <NickName>ELOCK_OFF_SLEEP</NickName>
+          <NickName>ELOCK-OFF-SLEEP</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -4945,14 +4945,14 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>1</Order>
-          <NickName>DOT_H</NickName>
+          <NickName>DOT-H</NickName>
           <Catalog>DOT</Catalog>
-          <DefValue>3.2</DefValue>
+          <DefValue>10</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
           <MinValue>1</MinValue>
-          <MaxValue>8</MaxValue>
+          <MaxValue>12</MaxValue>
           <Description>Discharge Over Temperature Release Hysteresis.</Description>
         </SFL>
       </Private>
@@ -4980,7 +4980,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>2</Order>
-          <NickName>DUT_EXT_RL</NickName>
+          <NickName>DUT-EXT-RL</NickName>
           <Catalog>DUT</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -5015,7 +5015,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>a</Order>
-          <NickName>IDLE_SLEEP</NickName>
+          <NickName>IDLE-SLEEP</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -5050,7 +5050,7 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>2</Order>
-          <NickName>DOT_EXT_RL </NickName>
+          <NickName>DOT-EXT-RL </NickName>
           <Catalog>DOT</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -5097,9 +5097,9 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>1</Order>
-          <NickName>DUT_H</NickName>
+          <NickName>DUT-H</NickName>
           <Catalog>DUT</Catalog>
-          <DefValue>4.4</DefValue>
+          <DefValue>10</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
@@ -9741,7 +9741,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>b</Order>
-          <NickName>V33_ON</NickName>
+          <NickName>V33-ON</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -10819,7 +10819,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>5</Order>
-          <NickName>SCAN_RATE</NickName>
+          <NickName>SCAN-RATE</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -10866,7 +10866,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>6</Order>
-          <NickName>UVP_DFLT</NickName>
+          <NickName>UVP-DFLT</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -10884,7 +10884,7 @@
       <RegRef>1</RegRef>
       <Offset>1260</Offset>
       <SubType>117</SubType>
-      <HexMin>0</HexMin>
+      <HexMin>1</HexMin>
       <HexMax>3f</HexMax>
       <PhyMin>-29.1</PhyMin>
       <PhyMax>13.4</PhyMax>
@@ -10910,14 +10910,14 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>0</Order>
-          <NickName>CUT_T</NickName>
+          <NickName>CUT-T</NickName>
           <Catalog>CUT</Catalog>
-          <DefValue>12.89</DefValue>
+          <DefValue>0</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
-          <MinValue>-29.1</MinValue>
-          <MaxValue>12.9</MaxValue>
+          <MinValue>-9999</MinValue>
+          <MaxValue>-9999</MaxValue>
           <Relations>
             <Item>0x00037c06</Item>
             <Item>0x000c0006</Item>
@@ -10958,9 +10958,9 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>1</Order>
-          <NickName>CUT_H</NickName>
+          <NickName>CUT-H</NickName>
           <Catalog>CUT</Catalog>
-          <DefValue>1.4</DefValue>
+          <DefValue>5</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
@@ -10976,7 +10976,7 @@
       <RegRef>1</RegRef>
       <Offset>1455</Offset>
       <SubType>117</SubType>
-      <HexMin>0</HexMin>
+      <HexMin>1</HexMin>
       <HexMax>3f</HexMax>
       <PhyMin>-35.9</PhyMin>
       <PhyMax>4.2</PhyMax>
@@ -11002,14 +11002,14 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>0</Order>
-          <NickName>DUT_T</NickName>
+          <NickName>DUT-T</NickName>
           <Catalog>DUT</Catalog>
-          <DefValue>3.74</DefValue>
+          <DefValue>-20</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
-          <MinValue>-35.9</MinValue>
-          <MaxValue>3.75</MaxValue>
+          <MinValue>-9999</MinValue>
+          <MaxValue>-9999</MaxValue>
           <Relations>
             <Item>0x00037f04</Item>
             <Item>0x000c0007</Item>
@@ -11050,14 +11050,14 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>0</Order>
-          <NickName>COT_T</NickName>
+          <NickName>COT-T</NickName>
           <Catalog>COT</Catalog>
-          <DefValue>92.6</DefValue>
+          <DefValue>55</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
-          <MinValue>34.9</MinValue>
-          <MaxValue>92.7</MaxValue>
+          <MinValue>-9999</MinValue>
+          <MaxValue>-9999</MaxValue>
           <Relations>
             <Item>0x00037d08</Item>
           </Relations>
@@ -11100,7 +11100,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>7</Order>
-          <NickName>DFET_OFF_IN_CHG</NickName>
+          <NickName>DFET-OFF-IN-CHG</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -11144,9 +11144,9 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>1</Order>
-          <NickName>COT_H</NickName>
+          <NickName>COT-H</NickName>
           <Catalog>COT</Catalog>
-          <DefValue>4.34</DefValue>
+          <DefValue>10</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
@@ -11193,7 +11193,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>0</Order>
-          <NickName>BAL_A_O</NickName>
+          <NickName>BAL-A-O</NickName>
           <Catalog>BAL</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -11240,7 +11240,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>8</Order>
-          <NickName>EXT_RL_O</NickName>
+          <NickName>EXT-RL-O</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -11284,14 +11284,14 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>0</Order>
-          <NickName>DOT_T</NickName>
+          <NickName>DOT-T</NickName>
           <Catalog>DOT</Catalog>
-          <DefValue>91.5</DefValue>
+          <DefValue>70</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
-          <MinValue>53.5</MinValue>
-          <MaxValue>91.5</MaxValue>
+          <MinValue>-9999</MinValue>
+          <MaxValue>-9999</MaxValue>
           <Relations>
             <Item>0x00037e08</Item>
           </Relations>
@@ -11334,7 +11334,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>9</Order>
-          <NickName>ELOCK_OFF_SLEEP</NickName>
+          <NickName>ELOCK-OFF-SLEEP</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -11378,14 +11378,14 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>1</Order>
-          <NickName>DOT_H</NickName>
+          <NickName>DOT-H</NickName>
           <Catalog>DOT</Catalog>
-          <DefValue>3.2</DefValue>
+          <DefValue>10</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
           <MinValue>1</MinValue>
-          <MaxValue>8</MaxValue>
+          <MaxValue>12</MaxValue>
           <Description>Discharge Over Temperature Release Hysteresis.</Description>
         </SFL>
       </Private>
@@ -11425,7 +11425,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>2</Order>
-          <NickName>DUT_EXT_RL</NickName>
+          <NickName>DUT-EXT-RL</NickName>
           <Catalog>DUT</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -11472,7 +11472,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>a</Order>
-          <NickName>IDLE_SLEEP</NickName>
+          <NickName>IDLE-SLEEP</NickName>
           <Catalog>Miscellaneous</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -11519,7 +11519,7 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>2</Order>
-          <NickName>DOT_EXT_RL </NickName>
+          <NickName>DOT-EXT-RL </NickName>
           <Catalog>DOT</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
@@ -11594,9 +11594,9 @@
         </SFL>
         <SFL Name="Register Config">
           <Order>1</Order>
-          <NickName>DUT_H</NickName>
+          <NickName>DUT-H</NickName>
           <Catalog>DUT</Catalog>
-          <DefValue>4.4</DefValue>
+          <DefValue>10</DefValue>
           <EditType>0</EditType>
           <Format>1</Format>
           <EventMode>0</EventMode>
@@ -11702,9 +11702,9 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>1</Order>
-          <NickName>CTO_E</NickName>
+          <NickName>CTO-E</NickName>
           <Catalog>CTO</Catalog>
-          <DefValue>0</DefValue>
+          <DefValue>1</DefValue>
           <EditType>1</EditType>
           <Format>0</Format>
           <EventMode>0</EventMode>
@@ -11733,9 +11733,9 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>2</Order>
-          <NickName>CUT_E</NickName>
+          <NickName>CUT-E</NickName>
           <Catalog>CUT</Catalog>
-          <DefValue>0</DefValue>
+          <DefValue>1</DefValue>
           <EditType>1</EditType>
           <Format>0</Format>
           <EventMode>0</EventMode>
@@ -11764,9 +11764,9 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>3</Order>
-          <NickName>DUT_E</NickName>
+          <NickName>DUT-E</NickName>
           <Catalog>DUT</Catalog>
-          <DefValue>0</DefValue>
+          <DefValue>1</DefValue>
           <EditType>1</EditType>
           <Format>0</Format>
           <EventMode>0</EventMode>
@@ -11795,9 +11795,9 @@
       <Private>
         <SFL Name="EFUSE Config">
           <Order>1</Order>
-          <NickName>EOC_E</NickName>
+          <NickName>EOC-E</NickName>
           <Catalog>EOC</Catalog>
-          <DefValue>0</DefValue>
+          <DefValue>1</DefValue>
           <EditType>1</EditType>
           <Format>0</Format>
           <EventMode>0</EventMode>
@@ -11826,9 +11826,9 @@
       <Private>
         <SFL Name="Register Config">
           <Order>1</Order>
-          <NickName>CTO_E</NickName>
+          <NickName>CTO-E</NickName>
           <Catalog>CTO</Catalog>
-          <DefValue>0</DefValue>
+          <DefValue>1</DefValue>
           <EditType>1</EditType>
           <Format>0</Format>
           <EventMode>0</EventMode>
@@ -11857,9 +11857,9 @@
       <Private>
         <SFL Name="Register Config">
           <Order>2</Order>
-          <NickName>CUT_E</NickName>
+          <NickName>CUT-E</NickName>
           <Catalog>CUT</Catalog>
-          <DefValue>0</DefValue>
+          <DefValue>1</DefValue>
           <EditType>1</EditType>
           <Format>0</Format>
           <EventMode>0</EventMode>
@@ -11888,9 +11888,9 @@
       <Private>
         <SFL Name="Register Config">
           <Order>3</Order>
-          <NickName>DUT_E</NickName>
+          <NickName>DUT-E</NickName>
           <Catalog>DUT</Catalog>
-          <DefValue>0</DefValue>
+          <DefValue>1</DefValue>
           <EditType>1</EditType>
           <Format>0</Format>
           <EventMode>0</EventMode>
@@ -11919,9 +11919,9 @@
       <Private>
         <SFL Name="Register Config">
           <Order>1</Order>
-          <NickName>EOC_E</NickName>
+          <NickName>EOC-E</NickName>
           <Catalog>EOC</Catalog>
-          <DefValue>0</DefValue>
+          <DefValue>1</DefValue>
           <EditType>1</EditType>
           <Format>0</Format>
           <EventMode>0</EventMode>

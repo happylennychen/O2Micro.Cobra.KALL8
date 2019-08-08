@@ -14,6 +14,7 @@ using System.Threading;
 using System.ComponentModel;
 using O2Micro.Cobra.Communication;
 using O2Micro.Cobra.Common;
+using System.IO;
 
 namespace O2Micro.Cobra.KALL08
 {
@@ -1636,6 +1637,85 @@ namespace O2Micro.Cobra.KALL08
                             return ret;
                         break;
                     }
+                case ElementDefine.COMMAND.SAVE_MAPPING_HEX:
+                    {
+                        InitRegisterData();
+                        ret = ConvertPhysicalToHex(ref msg);
+                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                            return ret;
+                        string HexData = GetRegisterHexData(ref msg);
+                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                            return ret;
+                        FileStream file = new FileStream(msg.sub_task_json, FileMode.Create);
+                        StreamWriter sw = new StreamWriter(file);
+                        sw.Write(HexData);
+                        sw.Close();
+                        file.Close();
+                        break;
+                    }
+                case ElementDefine.COMMAND.SAVE_EFUSE_HEX:
+                    {
+                        InitEfuseData();
+                        ret = ConvertPhysicalToHex(ref msg);
+                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                            return ret;
+                        PrepareHexData();
+                        ret = GetEfuseHexData(ref msg);
+                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                            return ret;
+                        FileStream file = new FileStream(msg.sub_task_json, FileMode.Create);
+                        StreamWriter sw = new StreamWriter(file);
+                        sw.Write(msg.sm.efusehexdata);
+                        sw.Close();
+                        file.Close();
+                        break;
+                    }
+                case ElementDefine.COMMAND.GET_MAX_VALUE:
+                    {
+                        param = msg.task_parameterlist.parameterlist[0];
+                        //double originalvalue = param.phydata;
+                        double maxvalue = 0;
+                        for (long i = param.dbHexMin; i <= param.dbHexMax; i++)
+                        {
+                            parent.WriteToRegImg(param, (ushort)i);
+                            parent.Hex2Physical(ref param);
+                            if (maxvalue < param.phydata)
+                                maxvalue = param.phydata;
+                        }
+                        param.dbPhyMax = maxvalue;
+                        //param.phydata = originalvalue;
+                        break;
+                    }
+                case ElementDefine.COMMAND.GET_MIN_VALUE:
+                    {
+                        param = msg.task_parameterlist.parameterlist[0];
+                        //double originalvalue = param.phydata;
+                        double minvalue = 99999;
+                        for (long i = param.dbHexMin; i <= param.dbHexMax; i++)
+                        {
+                            parent.WriteToRegImg(param, (ushort)i);
+                            parent.Hex2Physical(ref param);
+                            if (minvalue > param.phydata)
+                                minvalue = param.phydata;
+                        }
+                        param.dbPhyMin = minvalue;
+                        //param.phydata = originalvalue;
+                        break;
+                    }
+                case ElementDefine.COMMAND.VERIFICATION:
+                    {
+                        ret = ConvertPhysicalToHex(ref msg);
+                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                            return ret;
+                        PrepareHexData();
+                        ret = WriteToEFUSEBuffer();
+                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                            return ret;
+                        ret = ReadBackCheck();
+                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                            return ret;
+                        break;
+                    }
             }
             return ret;
         }
@@ -1686,6 +1766,15 @@ namespace O2Micro.Cobra.KALL08
             {
                 parent.m_EFRegImg[i].err = 0;
                 parent.m_EFRegImg[i].val = 0;
+            }
+        }
+
+        private void InitRegisterData()
+        {
+            for (ushort i = ElementDefine.OP_USR_OFFSET; i <= ElementDefine.OP_USR_TOP; i++)
+            {
+                parent.m_OpRegImg[i].err = 0;
+                parent.m_OpRegImg[i].val = 0;
             }
         }
 
@@ -1808,6 +1897,24 @@ namespace O2Micro.Cobra.KALL08
             return ret;
         }
 
+
+        private UInt32 WriteToEFUSEBuffer()
+        {
+            UInt32 ret = LibErrorCode.IDS_ERR_SUCCESSFUL;
+
+            for (byte badd = (byte)ElementDefine.EF_USR_OFFSET; badd <= (byte)ElementDefine.EF_USR_TOP; badd++)
+            {
+                ret = parent.m_EFRegImg[badd].err;
+                if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                {
+                    return ret;
+                }
+                EFUSEUSRbuf[badd - ElementDefine.EF_USR_OFFSET] = parent.m_EFRegImg[badd].val;
+            }
+
+            return ret;
+        }
+
         private UInt32 ReadBackCheck()
         {
             UInt32 ret = LibErrorCode.IDS_ERR_SUCCESSFUL;
@@ -1817,7 +1924,9 @@ namespace O2Micro.Cobra.KALL08
             ushort pval = 0;
             for (byte badd = (byte)ElementDefine.EF_USR_OFFSET; badd <= (byte)ElementDefine.EF_USR_TOP; badd++)
             {
-                ret = OnReadWord(badd, ref pval);
+                ret = ReadWord(badd, ref pval);
+                if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                    return ret;
                 if (pval != EFUSEUSRbuf[badd - ElementDefine.EF_USR_OFFSET])
                 {
                     return LibErrorCode.IDS_ERR_DEM_BUF_CHECK_FAIL;
@@ -1840,6 +1949,18 @@ namespace O2Micro.Cobra.KALL08
             return LibErrorCode.IDS_ERR_SUCCESSFUL;
         }
 
+        private string GetRegisterHexData(ref TASKMessage msg)
+        {
+            string tmp = "";
+            for (ushort i = ElementDefine.OP_USR_OFFSET; i <= ElementDefine.OP_USR_TOP; i++)
+            {
+                if (parent.m_OpRegImg[i].err != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                    return "";
+                tmp += "0x" + i.ToString("X2") + ", " + "0x" + parent.m_OpRegImg[i].val.ToString("X4") + "\r\n";
+            }
+            return tmp;
+        }
+
         private UInt32 GetEfuseBinData(ref TASKMessage msg)
         {
             List<byte> tmp = new List<byte>();
@@ -1856,6 +1977,19 @@ namespace O2Micro.Cobra.KALL08
                 tmp.Add(low);
             }
             msg.sm.efusebindata = tmp;
+            return LibErrorCode.IDS_ERR_SUCCESSFUL;
+        }
+
+        private UInt32 GetMappingHexData(ref TASKMessage msg)
+        {
+            string tmp = "";
+            for (ushort i = ElementDefine.OP_USR_OFFSET; i <= ElementDefine.OP_USR_TOP; i++)
+            {
+                if (parent.m_EFRegImg[i].err != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                    return parent.m_EFRegImg[i].err;
+                tmp += "0x" + i.ToString("X2") + ", " + "0x" + parent.m_EFRegImg[i].val.ToString("X4") + "\r\n";
+            }
+            msg.sm.efusehexdata = tmp;
             return LibErrorCode.IDS_ERR_SUCCESSFUL;
         }
 

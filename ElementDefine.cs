@@ -25,6 +25,8 @@ namespace O2Micro.Cobra.KALL08
         internal const UInt16 EF_USR_TOP = 0x6f;
         internal const UInt16 USR_CRC_OFFSET = 0x6f;
 
+        internal const UInt16 OP_USR_OFFSET = 0x76;
+        internal const UInt16 OP_USR_TOP = 0x7f;
         internal const UInt16 ATE_CRC_BUF_LEN = 23;     // 4 * 6 - 1
         internal const UInt16 USR_CRC_BUF_LEN = 39;     // 4 * 10 - 1
 
@@ -161,7 +163,12 @@ namespace O2Micro.Cobra.KALL08
             DOWNLOAD_WITHOUT_POWER_CONTROL = 12,
             READ_BACK_CHECK = 13,
             ATE_CRC_CHECK = 14,
-            GET_EFUSE_HEX_DATA = 15
+            GET_EFUSE_HEX_DATA = 15,
+            SAVE_MAPPING_HEX = 16,
+            SAVE_EFUSE_HEX = 17,
+            GET_MAX_VALUE = 18,
+            GET_MIN_VALUE = 19,
+            VERIFICATION = 20
         }
     }
 }
