@@ -55,6 +55,7 @@
         <Item SubTaskID="13">Read Back Check</Item>
       </Process>
       <GetEfuseHexDataCommand>15</GetEfuseHexDataCommand>
+      <Verification SubTaskID="20">Read Back Check</Verification>
     </Button>
   </Part>
 </Root>

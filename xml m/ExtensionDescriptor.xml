@@ -11,6 +11,7 @@
   <Part Name = "MainBtnList">
     <Button Label = "Mass Production"    DBModuleName="Production"        Name = "Production" ShowVerify="False" ShowConfig="False" ShowHEX="False" PanelName ="O2Micro.Cobra.ProductionPanel" External="EFUSE Config|Board Config">
       <Password>111111</Password>
+      <Verification SubTaskID="20">Read Back Check</Verification>
     </Button>
   </Part>
 </Root>
