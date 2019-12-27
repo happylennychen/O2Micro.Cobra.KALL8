@@ -30,7 +30,7 @@ namespace O2Micro.Cobra.KALL08
             set { m_parent = value; }
         }
 
-        UInt16[] EFUSEUSRbuf = new UInt16[ElementDefine.EF_USR_TOP - ElementDefine.EF_USR_OFFSET + 1];
+        UInt16[] EFUSEUSRbuf = new UInt16[ElementDefine.EF_USR_TOP - ElementDefine.EF_USR_OFFSET + 1];      //Used for read back check
 
         private object m_lock = new object();
         private CCommunicateManager m_Interface = new CCommunicateManager();
@@ -300,7 +300,6 @@ namespace O2Micro.Cobra.KALL08
                     {
                         pval = ElementDefine.PARAM_HEX_ERROR;
                         ret = LibErrorCode.IDS_ERR_BUS_DATA_PEC_ERROR;
-                        //continue;
                     }
                     else
                     {
@@ -1589,7 +1588,7 @@ namespace O2Micro.Cobra.KALL08
 
                 case ElementDefine.COMMAND.DOWNLOAD_WITH_POWER_CONTROL:
                     {
-                        ret = DownloadWithPowerControl();
+                        ret = Download(msg.sm.efusebindata, true);
                         if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
                             return ret;
 #if debug
@@ -1600,7 +1599,7 @@ namespace O2Micro.Cobra.KALL08
 
                 case ElementDefine.COMMAND.DOWNLOAD_WITHOUT_POWER_CONTROL:
                     {
-                        ret = DownloadWithoutPowerControl();
+                        ret = Download(msg.sm.efusebindata, false);
                         if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
                             return ret;
 #if debug
@@ -1622,37 +1621,6 @@ namespace O2Micro.Cobra.KALL08
                             return ret;
                         break;
                     }
-                case ElementDefine.COMMAND.GET_EFUSE_HEX_DATA:
-                    {
-                        InitEfuseData();
-                        ret = ConvertPhysicalToHex(ref msg);
-                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                            return ret;
-                        PrepareHexData();
-                        ret = GetEfuseHexData(ref msg);
-                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                            return ret;
-                        ret = GetEfuseBinData(ref msg);
-                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                            return ret;
-                        break;
-                    }
-                case ElementDefine.COMMAND.SAVE_MAPPING_HEX:
-                    {
-                        InitRegisterData();
-                        ret = ConvertPhysicalToHex(ref msg);
-                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                            return ret;
-                        string HexData = GetRegisterHexData(ref msg);
-                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                            return ret;
-                        FileStream file = new FileStream(msg.sub_task_json, FileMode.Create);
-                        StreamWriter sw = new StreamWriter(file);
-                        sw.Write(HexData);
-                        sw.Close();
-                        file.Close();
-                        break;
-                    }
                 case ElementDefine.COMMAND.SAVE_EFUSE_HEX:
                     {
                         InitEfuseData();
@@ -1663,11 +1631,27 @@ namespace O2Micro.Cobra.KALL08
                         ret = GetEfuseHexData(ref msg);
                         if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
                             return ret;
-                        FileStream file = new FileStream(msg.sub_task_json, FileMode.Create);
-                        StreamWriter sw = new StreamWriter(file);
-                        sw.Write(msg.sm.efusehexdata);
-                        sw.Close();
-                        file.Close();
+                        FileStream hexfile = new FileStream(msg.sub_task_json, FileMode.Create);
+                        StreamWriter hexsw = new StreamWriter(hexfile);
+                        hexsw.Write(msg.sm.efusehexdata);
+                        hexsw.Close();
+                        hexfile.Close();
+
+                        ret = GetEfuseBinData(ref msg);
+                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                            return ret;
+
+                        string binfilename = Path.Combine(Path.GetDirectoryName(msg.sub_task_json), 
+                            Path.GetFileNameWithoutExtension(msg.sub_task_json) + ".bin");
+
+                        Encoding ec = Encoding.UTF8;
+                        using (BinaryWriter bw = new BinaryWriter(File.Open(binfilename, FileMode.Create), ec))
+                        {
+                            foreach (var b in msg.sm.efusebindata)
+                                bw.Write(b);
+
+                            bw.Close();
+                        }
                         break;
                     }
                 case ElementDefine.COMMAND.GET_MAX_VALUE:
@@ -1702,13 +1686,12 @@ namespace O2Micro.Cobra.KALL08
                         //param.phydata = originalvalue;
                         break;
                     }
-                case ElementDefine.COMMAND.VERIFICATION:
+                case ElementDefine.COMMAND.VERIFICATION:    //先从文件中读出数据到EFUSEBuffer,然后读回检查
                     {
-                        ret = ConvertPhysicalToHex(ref msg);
-                        if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                            return ret;
-                        PrepareHexData();
-                        ret = WriteToEFUSEBuffer();
+                        Dictionary<string, ushort> EFRegImg = LoadEFRegImgFromEFUSEBin(msg.sm.efusebindata);
+
+                        WriteToEFUSEBuffer(EFRegImg);
+
                         if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
                             return ret;
                         ret = ReadBackCheck();
@@ -1769,15 +1752,6 @@ namespace O2Micro.Cobra.KALL08
             }
         }
 
-        private void InitRegisterData()
-        {
-            for (ushort i = ElementDefine.OP_USR_OFFSET; i <= ElementDefine.OP_USR_TOP; i++)
-            {
-                parent.m_OpRegImg[i].err = 0;
-                parent.m_OpRegImg[i].val = 0;
-            }
-        }
-
         private void PrepareHexData()
         {
             parent.m_EFRegImg[ElementDefine.EF_USR_TOP].val |= 0x8000;    //Set Frozen bit in image
@@ -1789,11 +1763,9 @@ namespace O2Micro.Cobra.KALL08
 
         }
 
-        private UInt32 DownloadWithPowerControl()
+        private UInt32 Download(List<byte> efusebindata, bool isWithPowerControl)
         {
             UInt32 ret = LibErrorCode.IDS_ERR_SUCCESSFUL;
-
-            PrepareHexData();
 
             ret = SetWorkMode(ElementDefine.WORK_MODE.PROGRAM);
             if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
@@ -1801,43 +1773,37 @@ namespace O2Micro.Cobra.KALL08
                 return ret;
             }
 
-            ret = PowerOn();
-            if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                return ret;
 
+            if (isWithPowerControl)
+            {
+                ret = PowerOn();
+                if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                    return ret;
+            }
             ret = CheckProgramVoltage();
             if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
                 return ret;
 
+            Dictionary<string, ushort> EFRegImg = LoadEFRegImgFromEFUSEBin(efusebindata);
+
+            WriteToEFUSEBuffer(EFRegImg);
+
+            //for (byte badd = (byte)ElementDefine.EF_USR_OFFSET; badd <= (byte)ElementDefine.EF_USR_TOP; badd++)
             for (byte badd = (byte)ElementDefine.EF_USR_OFFSET; badd <= (byte)ElementDefine.EF_USR_TOP; badd++)
             {
-#if debug
-                ret = LibErrorCode.IDS_ERR_SUCCESSFUL;
-#else
-                ret = parent.m_EFRegImg[badd].err;
-#endif
-                if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                {
-                    return ret;
-                }
-
-#if debug
-                EFUSEUSRbuf[badd - ElementDefine.EF_USR_OFFSET] = 0;
-#else
-                EFUSEUSRbuf[badd - ElementDefine.EF_USR_OFFSET] = parent.m_EFRegImg[badd].val;
-#endif
-                ret = OnWriteWord(badd, parent.m_EFRegImg[badd].val);
-                parent.m_EFRegImg[badd].err = ret;
+                ret = OnWriteWord(badd, EFUSEUSRbuf[badd - (byte)ElementDefine.EF_USR_OFFSET]);
                 if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
                 {
                     return ret;
                 }
             }
 
-            ret = PowerOff();
-            if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                return ret;
-
+            if (isWithPowerControl)
+            {
+                ret = PowerOff();
+                if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+                    return ret;
+            }
             ret = SetWorkMode(ElementDefine.WORK_MODE.NORMAL);
             if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
             {
@@ -1847,72 +1813,23 @@ namespace O2Micro.Cobra.KALL08
             return ret;
         }
 
-        private UInt32 DownloadWithoutPowerControl()
+        private Dictionary<string, ushort> LoadEFRegImgFromEFUSEBin(List<byte> efusebindata)
         {
-            UInt32 ret = LibErrorCode.IDS_ERR_SUCCESSFUL;
-
-            PrepareHexData();
-
-            ret = SetWorkMode(ElementDefine.WORK_MODE.PROGRAM);
-            if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
+            Dictionary<string, ushort> output = new Dictionary<string, ushort>();
+            for (int i = 0; i < (ElementDefine.EF_USR_TOP - ElementDefine.EF_USR_OFFSET + 1); i++)
             {
-                return ret;
+                output.Add(efusebindata[i * 3].ToString("X2"), SharedFormula.MAKEWORD(efusebindata[i * 3 + 2], efusebindata[i * 3 + 1]));
             }
-
-            ret = CheckProgramVoltage();
-            if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                return ret;
-
-            for (byte badd = (byte)ElementDefine.EF_USR_OFFSET; badd <= (byte)ElementDefine.EF_USR_TOP; badd++)
-            {
-#if debug
-                ret = LibErrorCode.IDS_ERR_SUCCESSFUL;
-#else
-                ret = parent.m_EFRegImg[badd].err;
-#endif
-                if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                {
-                    return ret;
-                }
-
-#if debug
-                EFUSEUSRbuf[badd - ElementDefine.EF_USR_OFFSET] = 0;
-#else
-                EFUSEUSRbuf[badd - ElementDefine.EF_USR_OFFSET] = parent.m_EFRegImg[badd].val;
-#endif
-                ret = OnWriteWord(badd, parent.m_EFRegImg[badd].val);
-                parent.m_EFRegImg[badd].err = ret;
-                if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                {
-                    return ret;
-                }
-            }
-
-            ret = SetWorkMode(ElementDefine.WORK_MODE.NORMAL);
-            if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-            {
-                return ret;
-            }
-
-            return ret;
+            return output;
         }
 
-
-        private UInt32 WriteToEFUSEBuffer()
+        private void WriteToEFUSEBuffer(Dictionary<string, ushort> EFRegImg)
         {
-            UInt32 ret = LibErrorCode.IDS_ERR_SUCCESSFUL;
-
-            for (byte badd = (byte)ElementDefine.EF_USR_OFFSET; badd <= (byte)ElementDefine.EF_USR_TOP; badd++)
+            foreach (var key in EFRegImg.Keys)
             {
-                ret = parent.m_EFRegImg[badd].err;
-                if (ret != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                {
-                    return ret;
-                }
-                EFUSEUSRbuf[badd - ElementDefine.EF_USR_OFFSET] = parent.m_EFRegImg[badd].val;
+                byte badd = Convert.ToByte(key, 16);
+                EFUSEUSRbuf[badd - (byte)ElementDefine.EF_USR_OFFSET] = EFRegImg[key];
             }
-
-            return ret;
         }
 
         private UInt32 ReadBackCheck()
@@ -1949,18 +1866,6 @@ namespace O2Micro.Cobra.KALL08
             return LibErrorCode.IDS_ERR_SUCCESSFUL;
         }
 
-        private string GetRegisterHexData(ref TASKMessage msg)
-        {
-            string tmp = "";
-            for (ushort i = ElementDefine.OP_USR_OFFSET; i <= ElementDefine.OP_USR_TOP; i++)
-            {
-                if (parent.m_OpRegImg[i].err != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                    return "";
-                tmp += "0x" + i.ToString("X2") + ", " + "0x" + parent.m_OpRegImg[i].val.ToString("X4") + "\r\n";
-            }
-            return tmp;
-        }
-
         private UInt32 GetEfuseBinData(ref TASKMessage msg)
         {
             List<byte> tmp = new List<byte>();
@@ -1977,19 +1882,6 @@ namespace O2Micro.Cobra.KALL08
                 tmp.Add(low);
             }
             msg.sm.efusebindata = tmp;
-            return LibErrorCode.IDS_ERR_SUCCESSFUL;
-        }
-
-        private UInt32 GetMappingHexData(ref TASKMessage msg)
-        {
-            string tmp = "";
-            for (ushort i = ElementDefine.OP_USR_OFFSET; i <= ElementDefine.OP_USR_TOP; i++)
-            {
-                if (parent.m_EFRegImg[i].err != LibErrorCode.IDS_ERR_SUCCESSFUL)
-                    return parent.m_EFRegImg[i].err;
-                tmp += "0x" + i.ToString("X2") + ", " + "0x" + parent.m_EFRegImg[i].val.ToString("X4") + "\r\n";
-            }
-            msg.sm.efusehexdata = tmp;
             return LibErrorCode.IDS_ERR_SUCCESSFUL;
         }
 
@@ -2053,22 +1945,23 @@ namespace O2Micro.Cobra.KALL08
             UInt32 ret = LibErrorCode.IDS_ERR_SUCCESSFUL;
             msg.sm.dic.Clear();
             UInt32 cellnum = (UInt32)parent.CellNum.phydata + 5;    //“00” ~ “11” corresponds to 5 ~ 8 cells.
-            if (cellnum == 8)
+
+            if (cellnum == ElementDefine.CELL_NUMBER)
             {
-                for (byte i = 0; i < 8; i++)
+                for (byte i = 0; i < ElementDefine.CELL_NUMBER; i++)
                     msg.sm.dic.Add((uint)(i), true);
             }
             else
             {
-                for (byte i = 0; i < 8; i++)
+                for (byte i = 0; i < ElementDefine.CELL_NUMBER; i++)
                 {
                     if (i < cellnum - 1)
                         msg.sm.dic.Add((uint)i, true);
                     else if (i == cellnum - 1)
-                        msg.sm.dic.Add(7, false);
-                    else if (i < 7)
+                        msg.sm.dic.Add(ElementDefine.CELL_NUMBER - 1, false);
+                    else if (i < (ElementDefine.CELL_NUMBER -1))
                         msg.sm.dic.Add((uint)i, false);
-                    else if (i == 7)
+                    else if (i == (ElementDefine.CELL_NUMBER - 1))
                         msg.sm.dic.Add(cellnum - 1, true);
                 }
             }

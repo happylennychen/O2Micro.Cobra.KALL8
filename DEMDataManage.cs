@@ -337,7 +337,6 @@ namespace O2Micro.Cobra.KALL08
         {
             if (pTarget.errorcode != LibErrorCode.IDS_ERR_SUCCESSFUL)
                 return;
-            Parameter source = new Parameter();
             switch (pTarget.guid)
             {
                 case ElementDefine.OCUT_E:
