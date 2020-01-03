@@ -51,7 +51,7 @@
         <SFL Name="BusOptions">
           <Order>0</Order>
           <NickName>I2C Address:</NickName>
-          <Catalog>KALL</Catalog>
+          <Catalog>KALL08</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
           <Format>1</Format>
@@ -72,7 +72,7 @@
         <SFL Name="BusOptions">
           <Order>1</Order>
           <NickName>PEC enable</NickName>
-          <Catalog>KALL</Catalog>
+          <Catalog>KALL08</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
           <Format>1</Format>

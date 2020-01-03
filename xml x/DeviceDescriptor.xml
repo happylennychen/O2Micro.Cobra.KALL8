@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Root usage="DeviceDescriptor" chip="KALL08" version="1.00" PRODUCT_FAMILY="OZ7708">
+<Root usage="DeviceDescriptor" chip="OZ7708" version="1.00" PRODUCT_FAMILY="OZ7708">
   <Section Name="BusOptions" Guid="0x00100000">
     <Element Guid="0x00100000">
       <PhysicalData>0</PhysicalData>
@@ -51,7 +51,7 @@
         <SFL Name="BusOptions">
           <Order>0</Order>
           <NickName>I2C Address:</NickName>
-          <Catalog>KALL</Catalog>
+          <Catalog>OZ7708</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
           <Format>1</Format>
@@ -72,7 +72,7 @@
         <SFL Name="BusOptions">
           <Order>1</Order>
           <NickName>PEC enable</NickName>
-          <Catalog>KALL</Catalog>
+          <Catalog>OZ7708</Catalog>
           <DefValue>0</DefValue>
           <EditType>1</EditType>
           <Format>1</Format>
@@ -3919,7 +3919,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>docp scp slave rls</Description>
         </SFL>
         <SFL Name="EFUSE Config">
@@ -5187,7 +5187,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>chip id</Description>
         </SFL>
       </Private>
@@ -5218,7 +5218,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>ntc adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5261,7 +5261,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell01 adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5313,7 +5313,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell02 adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5358,7 +5358,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell03 adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5403,7 +5403,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell04 adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5448,7 +5448,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell05 adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5493,7 +5493,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell06 adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5538,7 +5538,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell07 adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5583,7 +5583,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell08 adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5628,7 +5628,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>packcs adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5671,7 +5671,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>packcm adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5718,7 +5718,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>v800mv adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5761,7 +5761,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>v33v adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5804,7 +5804,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>packv adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5847,7 +5847,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>v50v adc data</Description>
         </SFL>
         <SFL Name="Scan">
@@ -5890,7 +5890,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>max cell data</Description>
         </SFL>
       </Private>
@@ -5921,7 +5921,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>which cell max</Description>
         </SFL>
       </Private>
@@ -5952,7 +5952,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>min cell data</Description>
         </SFL>
       </Private>
@@ -5983,7 +5983,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>which cell min</Description>
         </SFL>
       </Private>
@@ -6014,7 +6014,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>sw_dsg_slave_ctrl</Description>
         </SFL>
       </Private>
@@ -6045,7 +6045,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>sw elock</Description>
         </SFL>
       </Private>
@@ -6076,7 +6076,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>sw dsg main ctrl</Description>
         </SFL>
       </Private>
@@ -6107,7 +6107,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>sw chg ctrl</Description>
         </SFL>
       </Private>
@@ -6138,7 +6138,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>trigger scan req</Description>
         </SFL>
       </Private>
@@ -6169,7 +6169,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>sw mapping req</Description>
         </SFL>
       </Private>
@@ -6200,7 +6200,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dsg main drv</Description>
         </SFL>
         <SFL Name="Scan">
@@ -6244,7 +6244,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>chg drv</Description>
         </SFL>
         <SFL Name="Scan">
@@ -6287,7 +6287,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>in dsg main state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -6330,7 +6330,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>in chg state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -6373,7 +6373,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dsg slave drv</Description>
         </SFL>
         <SFL Name="Scan">
@@ -6416,7 +6416,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>in dsg slave state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -6459,7 +6459,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>sw mapping flag</Description>
         </SFL>
         <SFL Name="Scan">
@@ -6503,7 +6503,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scp main ie</Description>
         </SFL>
       </Private>
@@ -6534,7 +6534,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p main ie</Description>
         </SFL>
       </Private>
@@ -6565,7 +6565,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc1p main ie</Description>
         </SFL>
       </Private>
@@ -6596,7 +6596,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cutp ie</Description>
         </SFL>
       </Private>
@@ -6627,7 +6627,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cotp ie</Description>
         </SFL>
       </Private>
@@ -6658,7 +6658,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dotp ie</Description>
         </SFL>
       </Private>
@@ -6689,7 +6689,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp ie</Description>
         </SFL>
       </Private>
@@ -6720,7 +6720,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>ovp ie</Description>
         </SFL>
       </Private>
@@ -6751,7 +6751,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cocp ie</Description>
         </SFL>
       </Private>
@@ -6782,7 +6782,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cto ie</Description>
         </SFL>
       </Private>
@@ -6813,7 +6813,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>eoc ie</Description>
         </SFL>
       </Private>
@@ -6844,7 +6844,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>iotp ie</Description>
         </SFL>
       </Private>
@@ -6875,7 +6875,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dutp ie</Description>
         </SFL>
       </Private>
@@ -6906,7 +6906,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scp slave ie</Description>
         </SFL>
       </Private>
@@ -6937,7 +6937,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p slave ie</Description>
         </SFL>
       </Private>
@@ -6968,7 +6968,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc1p slave ie</Description>
         </SFL>
       </Private>
@@ -6999,7 +6999,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scp main state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7042,7 +7042,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p main state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7085,7 +7085,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc1p main state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7128,7 +7128,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cutp state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7171,7 +7171,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cotp state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7214,7 +7214,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dotp state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7257,7 +7257,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7300,7 +7300,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>ovp state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7343,7 +7343,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cocp state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7386,7 +7386,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cto state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7429,7 +7429,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>eoc state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7472,7 +7472,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>iotp state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7515,7 +7515,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>false</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dutp state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7558,7 +7558,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scp slave state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7602,7 +7602,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p slave state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7646,7 +7646,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc1p slave state</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7691,7 +7691,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>trigger scan ie</Description>
         </SFL>
       </Private>
@@ -7722,7 +7722,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>hw wkup ie</Description>
         </SFL>
       </Private>
@@ -7753,7 +7753,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>hw sleep ie</Description>
         </SFL>
       </Private>
@@ -7784,7 +7784,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>i2c timeout ie</Description>
         </SFL>
       </Private>
@@ -7815,7 +7815,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>trigger scan flag</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7859,7 +7859,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>hw wkup flag</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7903,7 +7903,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>hw sleep state</Description>
         </SFL>
       </Private>
@@ -7934,7 +7934,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>i2c timeout flag</Description>
         </SFL>
         <SFL Name="Scan">
@@ -7978,7 +7978,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>efetc cfg</Description>
         </SFL>
       </Private>
@@ -8009,7 +8009,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>shutdown cmd</Description>
         </SFL>
       </Private>
@@ -8040,7 +8040,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>unlock shutdown wrt</Description>
         </SFL>
       </Private>
@@ -8071,7 +8071,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>allow wr</Description>
         </SFL>
       </Private>
@@ -8102,7 +8102,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p slave th</Description>
         </SFL>
       </Private>
@@ -8133,7 +8133,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p slave dly</Description>
         </SFL>
       </Private>
@@ -8164,7 +8164,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scp slave dly</Description>
         </SFL>
       </Private>
@@ -8195,7 +8195,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc1p slave th</Description>
         </SFL>
       </Private>
@@ -8226,7 +8226,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>vd33 on hw</Description>
         </SFL>
       </Private>
@@ -8257,7 +8257,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p main th</Description>
         </SFL>
       </Private>
@@ -8288,7 +8288,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p main dly</Description>
         </SFL>
       </Private>
@@ -8319,7 +8319,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cocp timer rls</Description>
         </SFL>
       </Private>
@@ -8350,7 +8350,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell num</Description>
         </SFL>
       </Private>
@@ -8381,7 +8381,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>docp scp slave rls</Description>
         </SFL>
       </Private>
@@ -8412,7 +8412,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>docp scp main rls</Description>
         </SFL>
       </Private>
@@ -8443,7 +8443,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>adc based dly</Description>
         </SFL>
       </Private>
@@ -8474,7 +8474,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>ovp th</Description>
         </SFL>
       </Private>
@@ -8505,7 +8505,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>ovp rls hys</Description>
         </SFL>
       </Private>
@@ -8536,7 +8536,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell open th</Description>
         </SFL>
       </Private>
@@ -8567,7 +8567,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp th</Description>
         </SFL>
       </Private>
@@ -8598,7 +8598,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp rls hys</Description>
         </SFL>
       </Private>
@@ -8629,7 +8629,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>type cfg</Description>
         </SFL>
       </Private>
@@ -8660,7 +8660,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp rls option</Description>
         </SFL>
       </Private>
@@ -8691,7 +8691,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cocp th</Description>
         </SFL>
       </Private>
@@ -8722,7 +8722,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scp main dly</Description>
         </SFL>
       </Private>
@@ -8753,7 +8753,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc1p main th</Description>
         </SFL>
       </Private>
@@ -8784,7 +8784,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>chg th</Description>
         </SFL>
       </Private>
@@ -8815,7 +8815,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dsg th</Description>
         </SFL>
       </Private>
@@ -8846,7 +8846,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cb_accuracy</Description>
         </SFL>
       </Private>
@@ -8877,7 +8877,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cb start th</Description>
         </SFL>
       </Private>
@@ -8908,7 +8908,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scan rate</Description>
         </SFL>
       </Private>
@@ -8939,7 +8939,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp default</Description>
         </SFL>
       </Private>
@@ -8970,7 +8970,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cutp th</Description>
         </SFL>
       </Private>
@@ -9001,7 +9001,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cutp rls hys</Description>
         </SFL>
       </Private>
@@ -9032,7 +9032,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dutp th</Description>
         </SFL>
       </Private>
@@ -9063,7 +9063,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cotp th</Description>
         </SFL>
       </Private>
@@ -9094,7 +9094,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dsg off in chg</Description>
         </SFL>
       </Private>
@@ -9125,7 +9125,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cotp rls hys</Description>
         </SFL>
       </Private>
@@ -9156,7 +9156,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cb option</Description>
         </SFL>
       </Private>
@@ -9187,7 +9187,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>elock rls</Description>
         </SFL>
       </Private>
@@ -9218,7 +9218,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dotp th</Description>
         </SFL>
       </Private>
@@ -9249,7 +9249,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>elock off sleep</Description>
         </SFL>
       </Private>
@@ -9280,7 +9280,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dotp rls hys</Description>
         </SFL>
       </Private>
@@ -9311,7 +9311,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dutp rls option</Description>
         </SFL>
       </Private>
@@ -9342,7 +9342,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>idle sleep</Description>
         </SFL>
       </Private>
@@ -9373,7 +9373,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dotp rls option</Description>
         </SFL>
       </Private>
@@ -9404,7 +9404,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>user crc sum</Description>
         </SFL>
       </Private>
@@ -9435,7 +9435,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dutp rls hys</Description>
         </SFL>
       </Private>
@@ -9466,7 +9466,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>eoc th</Description>
         </SFL>
       </Private>
@@ -9497,7 +9497,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>user frozen</Description>
         </SFL>
       </Private>
@@ -9547,7 +9547,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p slave th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -9596,7 +9596,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p slave dly</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -9645,7 +9645,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scp slave dly</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -9689,7 +9689,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc1p slave th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -9736,7 +9736,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>vd33 on hw</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -9798,7 +9798,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p main th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -9847,7 +9847,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc2p main dly</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -9896,7 +9896,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cocp timer rls</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -9945,7 +9945,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell num</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10004,7 +10004,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>docp scp slave rls</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10053,7 +10053,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>docp scp main rls</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10102,7 +10102,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>adc based dly</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10146,7 +10146,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>ovp th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10190,7 +10190,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>ovp rls hys</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10238,7 +10238,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cell open th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10285,7 +10285,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10329,7 +10329,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp rls hys</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10376,7 +10376,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>type cfg</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10423,7 +10423,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp rls option</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10467,7 +10467,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cocp th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10516,7 +10516,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scp main dly</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10560,7 +10560,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>doc1p main th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10622,7 +10622,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>chg th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10676,7 +10676,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dsg th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10723,7 +10723,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cb_accuracy</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10767,7 +10767,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cb start th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10814,7 +10814,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>scan rate</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10861,7 +10861,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>uvp default</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10905,7 +10905,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cutp th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10953,7 +10953,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cutp rls hys</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -10997,7 +10997,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dutp th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11045,7 +11045,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cotp th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11095,7 +11095,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dsg off in chg</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11139,7 +11139,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cotp rls hys</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11188,7 +11188,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>cb option</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11235,7 +11235,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>elock rls</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11279,7 +11279,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dotp th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11329,7 +11329,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>elock off sleep</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11373,7 +11373,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dotp rls hys</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11420,7 +11420,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dutp rls option</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11467,7 +11467,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>idle sleep</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11514,7 +11514,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dotp rls option</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11557,7 +11557,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>user crc sum</Description>
         </SFL>
       </Private>
@@ -11589,7 +11589,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>dutp rls hys</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11633,7 +11633,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>eoc th</Description>
         </SFL>
         <SFL Name="Register Config">
@@ -11679,7 +11679,7 @@
           <Value>0</Value>
           <Read>true</Read>
           <Write>true</Write>
-          <Group>KALL08</Group>
+          <Group>OZ7708</Group>
           <Description>user frozen</Description>
         </SFL>
       </Private>
