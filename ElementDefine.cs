@@ -169,7 +169,8 @@ namespace O2Micro.Cobra.KALL08
             SAVE_EFUSE_HEX = 17,
             GET_MAX_VALUE = 18,
             GET_MIN_VALUE = 19,
-            VERIFICATION = 20                   //Production页面的Read Back Check按钮，比 READ_BACK_CHECK 命令多一些动作
+            VERIFICATION = 20,                   //Production页面的Read Back Check按钮，比 READ_BACK_CHECK 命令多一些动作
+            BIN_FILE_CHECK = 21                   //检查bin文件的合法性
         }
     }
 }
