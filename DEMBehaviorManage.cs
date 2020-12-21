@@ -12,11 +12,11 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.ComponentModel;
-using O2Micro.Cobra.Communication;
-using O2Micro.Cobra.Common;
+using Cobra.Communication;
+using Cobra.Common;
 using System.IO;
 
-namespace O2Micro.Cobra.KALL08
+namespace Cobra.KALL08
 {
     internal class DEMBehaviorManage
     {
@@ -905,20 +905,7 @@ namespace O2Micro.Cobra.KALL08
         private UInt32 ReadATECRC(ref byte crc)
         {
             ushort wdata = 0;
-            if (parent.isAMTEnabled)
-            {
-                AutoMationTest.AutoMationTest.bIsCRCRegister = true;    //Tell AMT we are reading CRC register
-                AutoMationTest.AutoMationTest.regCRCInfor.address = ElementDefine.ATE_CRC_OFFSET;
-                AutoMationTest.AutoMationTest.regCRCInfor.startbit = 0x00;
-                AutoMationTest.AutoMationTest.regCRCInfor.bitsnumber = 4;
 
-                parent.m_EFRegImg[ElementDefine.ATE_CRC_OFFSET].val &= 0xfff0;
-                parent.m_EFRegImg[ElementDefine.ATE_CRC_OFFSET].val |= calATECRC;    //Deliver calCRC to AMT
-            }
-            else
-            {
-                AutoMationTest.AutoMationTest.bIsCRCRegister = false;
-            }
             parent.m_EFRegImg[ElementDefine.ATE_CRC_OFFSET].err = ReadWord((byte)ElementDefine.ATE_CRC_OFFSET, ref wdata);
             if (parent.m_EFRegImg[ElementDefine.ATE_CRC_OFFSET].err != LibErrorCode.IDS_ERR_SUCCESSFUL)
                 return parent.m_EFRegImg[ElementDefine.ATE_CRC_OFFSET].err;
@@ -987,20 +974,7 @@ namespace O2Micro.Cobra.KALL08
         private UInt32 ReadUSRCRC(ref byte crc)
         {
             ushort wdata = 0;
-            if (parent.isAMTEnabled)
-            {
-                AutoMationTest.AutoMationTest.bIsCRCRegister = true;    //Tell AMT we are reading CRC register
-                parent.m_EFRegImg[ElementDefine.USR_CRC_OFFSET].val &= 0xfff0;
-                parent.m_EFRegImg[ElementDefine.USR_CRC_OFFSET].val |= calUSRCRC;    //Deliver calCRC to AMT
 
-                AutoMationTest.AutoMationTest.regCRCInfor.address = ElementDefine.USR_CRC_OFFSET;
-                AutoMationTest.AutoMationTest.regCRCInfor.startbit = 0x00;
-                AutoMationTest.AutoMationTest.regCRCInfor.bitsnumber = 4;
-            }
-            else
-            {
-                AutoMationTest.AutoMationTest.bIsCRCRegister = false;
-            }
             parent.m_EFRegImg[ElementDefine.USR_CRC_OFFSET].err = ReadWord((byte)ElementDefine.USR_CRC_OFFSET, ref wdata);
             if (parent.m_EFRegImg[ElementDefine.USR_CRC_OFFSET].err != LibErrorCode.IDS_ERR_SUCCESSFUL)
                 return parent.m_EFRegImg[ElementDefine.USR_CRC_OFFSET].err;

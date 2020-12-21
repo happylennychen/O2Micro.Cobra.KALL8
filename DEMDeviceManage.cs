@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 using System.Reflection;
-using O2Micro.Cobra.Common;
-using O2Micro.Cobra.AutoMationTest;
-//using O2Micro.Cobra.EM;
+using Cobra.Common;
+//using Cobra.EM;
 
-namespace O2Micro.Cobra.KALL08
+namespace Cobra.KALL08
 {
     public class DEMDeviceManage : IDEMLib
     {
@@ -209,7 +208,6 @@ namespace O2Micro.Cobra.KALL08
 
             m_HwMode_RegList.Add(ElementDefine.EFUSEElement, m_EFRegImg);
             m_HwMode_RegList.Add(ElementDefine.OperationElement, m_OpRegImg);
-            AutoMationTest.AutoMationTest.init(m_HwMode_RegList);
 
             SharedAPI.ReBuildBusOptions(ref busoptions, ref deviceParamlistContainer);
 

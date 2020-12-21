@@ -5233,6 +5233,13 @@
           <Usability>false</Usability>
           <Description>Temperature</Description>
         </SFL>
+        <SFL Name="Mass Production">
+          <Name>Temperature</Name>
+          <Unit>Celsius</Unit>
+          <MinValue>0</MinValue>
+          <MaxValue>5000</MaxValue>
+          <EnableTolerance>true</EnableTolerance>
+        </SFL>
       </Private>
     </Element>
     <Element Guid="0x00031100">

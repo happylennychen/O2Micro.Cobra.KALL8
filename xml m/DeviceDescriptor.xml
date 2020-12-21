@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Root usage="DeviceDescriptor" chip="OZ7708" version="1.00">
+<Root usage="DeviceDescriptor" chip="OZ7708" version="1.00" PRODUCT_FAMILY="OZ7708">
   <Section Name="BusOptions" Guid="0x00100000">
     <Element Guid="0x00100000">
       <PhysicalData>0</PhysicalData>
@@ -5232,6 +5232,13 @@
           <MaxValue>121</MaxValue>
           <Usability>false</Usability>
           <Description>Temperature</Description>
+        </SFL>
+        <SFL Name="Mass Production">
+          <Name>Temperature</Name>
+          <Unit>Celsius</Unit>
+          <MinValue>0</MinValue>
+          <MaxValue>5000</MaxValue>
+          <EnableTolerance>true</EnableTolerance>
         </SFL>
       </Private>
     </Element>

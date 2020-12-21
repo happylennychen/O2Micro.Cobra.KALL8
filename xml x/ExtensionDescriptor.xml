@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<Root usage="ExtensionDescriptor" chip="OZ7708" chiptype="7708" bustype ="I2C" libname ="O2Micro.Cobra.KALL08" AppVersion="2.00.03" OCEVersion="1.00.07.00" ProjectCode="OCEKLL8X" AMTEnable="false" >
+<Root usage="ExtensionDescriptor" chip="OZ7708" chiptype="7708" bustype ="I2C" libname ="Cobra.KALL08" AppVersion="2.00.03" OCEVersion="1.00.08.00" ProjectCode="OCEKLL8X" AMTEnable="false" >
   <Part Name="DBConfig">
     <ChipName>KALL08|OZ7708</ChipName>
     <ChipVersion>A0</ChipVersion>
     <UserType>X</UserType>
-    <Date>20191226</Date>
+    <Date>20201125</Date>
     <HasCom>true</HasCom>
     <HasAMT>true</HasAMT>
   </Part>
   <Part Name = "MainBtnList">
-    <Button Label = "Board Config"  NoMapping="True"  Name ="DeviceConfig"   PanelName ="O2Micro.Cobra.DeviceConfigurationPanel">
+    <Button Label = "Board Config"  NoMapping="True"  Name ="DeviceConfig"   PanelName ="Cobra.DeviceConfigurationPanel">
       <Layout Name="layout" bOrder ="true">
         <Button Name ="EraseBtn" IsEnable ="False" Visibility="Collapsed"/>
         <Button Name ="SaveBtn" IsEnable ="False" Visibility="Collapsed"/>
@@ -18,12 +18,12 @@
         <Button Name ="WriteBtn" Recontent="Apply" IsEnable ="False" Visibility="Collapsed"/>
       </Layout>
     </Button>
-    <Button Label = "Expert"  Name = "Exper"         PanelName ="O2Micro.Cobra.ExperPanel">
+    <Button Label = "Expert"  Name = "Exper"         PanelName ="Cobra.ExperPanel">
       <Configure>
         <HidePro>false</HidePro>
       </Configure>
     </Button>
-    <Button Label = "Register Config"  NoMapping="True"    Name ="DeviceConfig"   PanelName ="O2Micro.Cobra.DeviceConfigurationPanel">
+    <Button Label = "Register Config"  NoMapping="True"    Name ="DeviceConfig"   PanelName ="Cobra.DeviceConfigurationPanel">
       <Layout Name ="layout" bOrder ="true">
         <Button Name ="EraseBtn" IsEnable ="False" Visibility="Collapsed"/>
       </Layout>
@@ -33,7 +33,7 @@
       </SubTask>
       <BoardConfigLabel>Board Config</BoardConfigLabel>
     </Button>
-    <Button Label = "EFUSE Config"   Name ="DeviceConfig"   PanelName ="O2Micro.Cobra.DeviceConfigurationPanel">
+    <Button Label = "EFUSE Config"   Name ="DeviceConfig"   PanelName ="Cobra.DeviceConfigurationPanel">
       <Layout Name ="layout" bOrder ="true">
         <Button Name ="EraseBtn" IsEnable ="False" Visibility="Collapsed"/>
       </Layout>
@@ -44,14 +44,14 @@
       </SubTask>
       <BoardConfigLabel>Board Config</BoardConfigLabel>
     </Button>
-    <Button Label = "Scan"      DBModuleName="Scan"      Name = "ScanV2"         PanelName ="O2Micro.Cobra.ScanPanel">
+    <Button Label = "Scan"      DBModuleName="Scan"      Name = "ScanV2"         PanelName ="Cobra.ScanPanel">
       <ScanRate>
         <Item>1S</Item>
         <Item>2S</Item>
         <Item>5S</Item>
       </ScanRate>
     </Button>
-    <Button Label = "Mass Production"    DBModuleName="Production"        Name = "Production" ShowConfig="True"         PanelName ="O2Micro.Cobra.ProductionPanel">
+    <Button Label = "Mass Production"    DBModuleName="Production"        Name = "Production" ShowConfig="True"         PanelName ="Cobra.ProductionPanel">
       <Process>
         <Item SubTaskID="9">Chip Frozen Check</Item>
         <Item SubTaskID="10">Chip Dirty Check</Item>
